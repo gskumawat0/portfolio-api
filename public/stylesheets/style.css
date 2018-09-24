@@ -3,35 +3,31 @@
     padding:0;
     margin:0;
 }
-section {
-    margin-top:20px;
-    min-height:100%;
-    padding: 10px;
-}
-section:nth(even){
-   background: #fcfcfc; 
+body{
+    background: #2f3542;
 }
 nav {
     min-height:65px;
     background-color: #231e21;
     display: flex;
     align-items:center;
-    padding-left: 50px;
     position:absolute;
 }
-nav a {
-    padding:10px;
+a{
+    color:#1e90ff;
+    transition: color .6s;
 }
-
-
+a:hover{
+    text-decoration: none;
+    color:#ff6b81;
+}
 header {
     height:100vh;
     vertical-align: middle;
     display: table-cell;
     position:relative;
     width: 100vw;
-    background: #a59f9f url(assets/headerbg.jpg) no-repeat fixed center ;
-    opacity:0.9;
+    background: #273c75 url(/assets/headerbg.jpg) no-repeat fixed center ;
 }
 header h2 {
     vertical-align: middle;
@@ -55,10 +51,14 @@ header h2 {
 }
 .port-item {
     height:100%;
+    /*background:#afaeae;*/
 }
 .port-item img{
     width:100%;
     height:200px;
+}
+.fix-space{
+    height:120px;
 }
 .footer{
     min-height:75px;
@@ -68,4 +68,32 @@ header h2 {
     display:inline-block;
     display:flex;
     justify-content:space-between;
+}
+.line-height-incr{
+    line-height: 2rem;
+}
+section:nth-of-type(2n){
+    background:#f5f6fa;
+}
+section:nth-of-type(odd){
+    background:#dcdde1;
+}
+.myborder{
+    border-top: solid 1px #2f3640;
+    border-bottom:solid 1px #2f3640;
+    border-left:none;
+    border-right:none;
+}
+
+a[href='#about'], a[href='#portfolio']{
+    scroll-behavior: smooth;
+}
+
+@media (max-width:480px){
+    .left-nav{
+        text-align: left;
+    }
+    .display{
+        flex-direction:column;
+    }
 }
