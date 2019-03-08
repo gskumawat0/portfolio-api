@@ -1,2 +1,7 @@
 node_modules
-test.html
+.env
+data/*
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

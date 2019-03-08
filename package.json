@@ -4,6 +4,7 @@
   "description": "portfolio website",
   "main": "app.js",
   "dependencies": {
+    "aws-sdk": "^2.417.0",
     "body-parser": "^1.18.3",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
@@ -13,9 +14,13 @@
     "mongoose": "^5.2.15",
     "nodemailer": "^4.6.8"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "dotenv": "^6.2.0",
+    "nodemon": "^1.18.10"
+  },
   "scripts": {
     "start": "node app.js",
+    "dev": "nodemon app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Gouri Shankar Kumawat",
