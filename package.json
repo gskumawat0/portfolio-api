@@ -1,28 +1,36 @@
 {
-  "name": "portfolio",
-  "version": "1.0.0",
+  "name": "portfolio-api",
+  "version": "2.0.0",
   "description": "portfolio website",
   "main": "app.js",
   "dependencies": {
-    "aws-sdk": "^2.417.0",
-    "body-parser": "^1.18.3",
-    "connect-flash": "^0.1.1",
-    "cookie-parser": "^1.4.3",
-    "ejs": "^2.6.1",
-    "express": "^4.16.3",
-    "express-session": "^1.15.6",
-    "mongoose": "^5.2.15",
+    "aws-sdk": "^2.660.0",
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.10",
     "nodemailer": "^4.6.8"
   },
   "devDependencies": {
-    "dotenv": "^6.2.0",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.19.4"
   },
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "author": "Gouri Shankar Kumawat",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gskumawat0/portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "api"
+  ],
+  "bugs": {
+    "url": "https://github.com/gskumawat0/portfolio/issues"
+  },
+  "homepage": "https://github.com/gskumawat0/portfolio#readme"
 }
