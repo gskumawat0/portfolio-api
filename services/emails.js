@@ -43,7 +43,7 @@ const setEmailParams = ({ ToAddresses, Source, ReplyToAddresses, subjectData, ht
 
 module.exports.sendContactEmailToAdmin = (message) => {
 	try {
-		let { _id, name, email, message: msg, responses } = message;
+		let { _id, name, email, message: msg } = message;
 		let ToAddresses = [ADMIN_EMAIL];
 		let ReplyToAddresses = [`reply-${_id}@${domain}`];
 		let Source = SOURCEEMAIL;
@@ -73,6 +73,7 @@ module.exports.sendContactEmailToAdmin = (message) => {
 		let params = setEmailParams({ Source, ReplyToAddresses, ToAddresses, htmlData, subjectData });
 		return ses.sendEmail(params).promise();
 	} catch (err) {
-		return Promise.reject(err);
+		console.log(err.message);
+		return Promise.resolve();
 	}
 };
