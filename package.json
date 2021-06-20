@@ -13,7 +13,7 @@
 		"express-sanitizer": "^1.0.5",
 		"moment": "^2.24.0",
 		"mongoose": "^5.9.10",
-		"nodemailer": "^4.6.8"
+		"nodemailer": "^6.4.16"
 	},
 	"devDependencies": {
 		"morgan": "^1.10.0",
