@@ -8,6 +8,7 @@ router.route("/content").get(getPublicContent).post(addContent).put(updateConten
 
 async function getPublicContent(req, res) {
 	try {
+		res.set("Cache-Control", "max-age=96800");
 		const content = await Content.findOne({});
 		return res.json({
 			content,

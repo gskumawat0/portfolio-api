@@ -21,7 +21,8 @@
 	},
 	"scripts": {
 		"start": "node server.js",
-		"dev": "nodemon server.js"
+		"dev": "nodemon server.js",
+		"debug": "nodemon --inspect server.js"
 	},
 	"author": "Gouri Shankar Kumawat",
 	"license": "ISC",
