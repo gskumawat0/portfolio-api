@@ -53,13 +53,26 @@ router.route("/contact").post(submitContact);
 async function submitContact(req, res) {
 	try {
 		let { token, name, email, message } = req.body;
-		let { ip } = req;
+		const ip = req.ip || req.headers["x-forwarded-for"] || req.connection.remoteAddress;
+		const userAgent = req.headers["user-agent"];
+		const referrer = req.get("Referrer");
+
 		let verifyResponse = await verifyRecaptcha(token, ip);
 		if (!verifyResponse.data.success) {
 			throw Error("token validation failed due to:" + verifyResponse.data["error-codes"].join(", "));
 		}
 
-		let msg = await Message.create({ name, email, message, date: Date.now() });
+		let msg = await Message.create({
+			name,
+			email,
+			message,
+			date: Date.now(),
+			user: {
+				ip,
+				userAgent,
+				referrer,
+			},
+		});
 		await emails.sendContactEmailToAdmin(msg);
 		return res.json({
 			message: `Thanks ${name} for Contacting us. We'll back to you in some time`,

@@ -6,6 +6,11 @@ const msgSchema = new Schema({
 	email: String,
 	message: String,
 	date: { type: Date, default: Date.now },
+	user: {
+		ip: String,
+		userAgent: String,
+		referrer: String,
+	},
 	responses: [
 		{
 			sender: String,

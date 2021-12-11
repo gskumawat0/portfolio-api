@@ -21,6 +21,7 @@ mongoose
 app.use(cors());
 app.use(bodyParser.json());
 app.use(expressSanitizer());
+app.set("trust proxy", true);
 
 app.use("/api/public", content);
 
